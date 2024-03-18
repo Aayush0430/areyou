@@ -10,10 +10,20 @@
         padding: 0;
         margin: 0;
         overflow-y: hidden;
+        height: 100vh;
+
+        background-color: blue;
+      }
+
+      .outer {
+        /* height: 100vh; */
+        /* background-color: red; */
+        overflow-y: hidden;
       }
       .container {
-        /* background-color: red; */
+        /* background-color: blue; */
         display: flex;
+        overflow-y: hidden;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -60,20 +70,36 @@
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="img-div">
-        <img src="11.jpg" id="img" alt="" />
+    <div class="outer">
+      <div class="container">
+        <div class="img-div">
+          <img src="11.jpg" id="img" alt="" />
+        </div>
+        <p class="text" id="display">Are you gay??</p>
+        <div id="btn-container">
+          <button onclick="yes()" id="yesBtn">Yes</button>
+          <button onclick="no()" id="noBtn">No</button>
+        </div>
+        <a href="index.html"><button id="btn-back">Back</button></a>
       </div>
-      <p class="text" id="display">Are you gay??</p>
-      <div id="btn-container">
-        <button onclick="yes()" id="yesBtn">Yes</button>
-        <button onclick="no()" id="noBtn">No</button>
-      </div>
-      <a href="index.html"><button id="btn-back">Back</button></a>
     </div>
   </body>
   <script>
     var count = 1;
+    var img = [
+      "14.jpeg",
+      "15.jpg",
+      "10.png",
+      "13.jpeg",
+      "12.jpg",
+      "17.jpeg",
+      "18.jpeg",
+      "10.png",
+      "13.jpeg",
+      "12.jpg",
+      "17.jpeg",
+      "18.jpeg",
+    ];
     function yes() {
       document.getElementById("img").src = "16.png";
       document.getElementById("display").innerHTML = "I knew you were gay..";
@@ -81,40 +107,9 @@
       document.getElementById("btn-back").style.display = "block";
     }
     function no() {
-      switch (count) {
-        case 1:
-          document.getElementById("img").src = "14.jpeg";
-          document.getElementById("yesBtn").style.fontSize = `${count * 2}rem`;
-          count++;
-          break;
-        case 2:
-          document.getElementById("img").src = "15.jpg";
-          document.getElementById("yesBtn").style.fontSize = `${count * 2}rem`;
-          count++;
-
-          break;
-        case 3:
-          document.getElementById("img").src = "13.jpeg";
-          document.getElementById("yesBtn").style.fontSize = `${count * 2}rem`;
-          count++;
-
-          break;
-        case 4:
-          document.getElementById("img").src = "14.jpeg";
-          document.getElementById("yesBtn").style.fontSize = `${count * 2}rem`;
-          count++;
-
-          break;
-        case 5:
-          document.getElementById("img").src = "14.jpeg";
-          document.getElementById("yesBtn").style.fontSize = `${count * 2}rem`;
-          count++;
-
-          break;
-
-        default:
-          break;
-      }
+      document.getElementById("img").src = `${img[count]}`;
+      document.getElementById("yesBtn").style.fontSize = `${count * 2}rem`;
+      count++;
     }
   </script>
 </html>

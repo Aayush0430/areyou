@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Are you</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        overflow-y: hidden;
+      }
+      .container {
+        /* background-color: red; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      img {
+        margin-top: 100px;
+        height: 200px;
+      }
+      #btn-container {
+        display: flex;
+        width: auto;
+        height: auto;
+        /* background-color: blue; */
+        flex-direction: column;
+        align-items: center;
+      }
+      #yesBtn {
+        padding: 10px 50px;
+        background-color: rgb(98, 184, 98);
+        border-radius: 5px;
+        /* font-size: 2rem; */
+      }
+      #noBtn {
+        margin-top: 20px;
+        background-color: rgb(220, 103, 103);
+        height: 30px;
+        width: 90px;
+        border-radius: 5px;
+      }
+      .text {
+        font-size: 1.8rem;
+        font-family: cursive;
+      }
+      #btn-back {
+        background-color: rgb(98, 184, 98);
+        border-radius: 5px;
+        padding: 10px 30px;
+
+        display: none;
+      }
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="img-div">
+        <img src="11.jpg" id="img" alt="" />
+      </div>
+      <p class="text" id="display">Are you gay??</p>
+      <div id="btn-container">
+        <button onclick="yes()" id="yesBtn">Yes</button>
+        <button onclick="no()" id="noBtn">No</button>
+      </div>
+      <a href="index.html"><button id="btn-back">Back</button></a>
+    </div>
+  </body>
+  <script>
+    var count = 1;
+    function yes() {
+      document.getElementById("img").src = "16.png";
+      document.getElementById("display").innerHTML = "I knew you were gay..";
+      document.getElementById("btn-container").style.display = "none";
+      document.getElementById("btn-back").style.display = "block";
+    }
+    function no() {
+      switch (count) {
+        case 1:
+          document.getElementById("img").src = "14.jpeg";
+          document.getElementById("yesBtn").style.fontSize = `${count * 2}rem`;
+          count++;
+          break;
+        case 2:
+          document.getElementById("img").src = "15.jpg";
+          document.getElementById("yesBtn").style.fontSize = `${count * 2}rem`;
+          count++;
+
+          break;
+        case 3:
+          document.getElementById("img").src = "13.jpeg";
+          document.getElementById("yesBtn").style.fontSize = `${count * 2}rem`;
+          count++;
+
+          break;
+        case 4:
+          document.getElementById("img").src = "14.jpeg";
+          document.getElementById("yesBtn").style.fontSize = `${count * 2}rem`;
+          count++;
+
+          break;
+        case 5:
+          document.getElementById("img").src = "14.jpeg";
+          document.getElementById("yesBtn").style.fontSize = `${count * 2}rem`;
+          count++;
+
+          break;
+
+        default:
+          break;
+      }
+    }
+  </script>
+</html>
